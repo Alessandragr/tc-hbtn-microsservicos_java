@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value="/users")
 public class UserController {
-    @GetMapping("/user-id/{id}")
+     @GetMapping("/user-id/{id}")
     public String findUserById(@PathVariable int id) {
         if(id > 0 && id <100) {
             return "You have entered valid ID";
         }
         else {
-            throw new RuntimeException("You have entered invalid ID");
+            throw new UserIdException("You have entered invalid ID");
         }
     }
 
@@ -24,7 +24,7 @@ public class UserController {
             return  "You have entered valid USERNAME";
         }
         else {
-            throw new RuntimeException("You have entered invalid USERNAME");
+            throw new UserNameException("You have entered invalid USERNAME");
         }
     }
 
@@ -34,7 +34,7 @@ public class UserController {
             return  "You have entered valid CPF";
         }
         else {
-            throw new RuntimeException("You have entered invalid CPF");
+            throw new CPFException("You have entered invalid CPF");
         }
     }
 }
