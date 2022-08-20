@@ -9,6 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
 
+    @BeforeEach
+    public void setuptest() {
+        standaloneSetup(this.mvc);
+    }
+
     @Test
     void sumTest() {
         Calculator calculator = new Calculator();
