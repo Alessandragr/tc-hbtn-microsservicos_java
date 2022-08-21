@@ -34,7 +34,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "Responsável por retornar uma lista de produtos.")
-    @GetMapping(path = "/allSongs")
+    @GetMapping(path = "/allProducts")
     @ResponseStatus(HttpStatus.OK)
     @ApiResponses( value = {
             @ApiResponse(code = 11, message = "Warning - the process returned more than 1000 products.")
@@ -54,7 +54,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "Responsável por remover um produto.")
-    @DeleteMapping(path = "/removeSong", consumes = "application/json", produces = "application/json")
+    @DeleteMapping(path = "/removeProduct", consumes = "application/json", produces = "application/json")
     @ApiResponses( value = {
             @ApiResponse(code = 13, message = "User not allowed to remove a product from this category.")
     })
@@ -63,7 +63,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "Responsável por atualizar um produto.")
-    @PutMapping(path = "/updateSong", consumes = "application/json", produces = "application/json")
+    @PutMapping(path = "/updateProduct", consumes = "application/json", produces = "application/json")
     @ApiResponses( value = {
             @ApiResponse(code = 14, message = "No information has been updated. The new information is the same as recorded in the database.")
     })
