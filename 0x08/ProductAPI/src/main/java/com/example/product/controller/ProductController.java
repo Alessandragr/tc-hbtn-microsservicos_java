@@ -58,7 +58,7 @@ public class ProductController {
     @ApiResponses( value = {
             @ApiResponse(code = 13, message = "User not allowed to remove a product from this category.")
     })
-    public void deleteProductById(@RequestBody Product product) {
+    public void removeProduct(@RequestBody Product product) {
         productRepository.removeProduct(product);
     }
 
